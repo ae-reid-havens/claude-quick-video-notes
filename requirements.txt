@@ -1,2 +1,2 @@
 openai-whisper>=20231117
-anthropic>=0.18.0
+anthropic>=1.13.0
