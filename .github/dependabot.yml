@@ -1,0 +1,43 @@
+# ============================================================
+# Dependabot for claude-quick-video-notes.
+#
+# Watches the pip requirements at the repo root. This repo runs no CI,
+# so the sweep merges a patch or minor update an hour after it
+# opens; label a PR dependabot-hold to keep the sweep off it.
+# Monthly on Fridays; security updates arrive whenever an
+# advisory lands, whatever this schedule says.
+#
+# Merging is not done here. dependency-sweep.yml in
+# analyticendeavors/agents-and-automation merges patch and minor
+# updates (security updates included) once checks are green, and
+# emails a weekly digest of majors, red CI and anything else held.
+# Majors are grouped apart so one never holds the other updates back.
+# ============================================================
+
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: monthly
+      day: friday
+      time: "13:00"
+      timezone: "Etc/UTC"
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    commit-message:
+      prefix: deps
+      include: scope
+    groups:
+      non-major:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      major:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
