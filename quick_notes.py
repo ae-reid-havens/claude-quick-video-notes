@@ -350,7 +350,7 @@ List the recommended order to run the chats, noting which can run in parallel vs
     print(f"Calling Claude API with {len(frames)} frames...")
 
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-5-5",
         max_tokens=8000,
         messages=[{"role": "user", "content": content}]
     )
