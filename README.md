@@ -313,10 +313,10 @@ In `analyze_with_claude()`, change the model:
 
 ```python
 # Faster & cheaper
-model="claude-haiku-3-5-latest"
+model="claude-haiku-5-5"
 
 # Better analysis
-model="claude-opus-4-20250514"
+model="claude-opus-5-5"
 ```
 
 ---
